@@ -1,0 +1,25 @@
+.margen { max-width: 720px; }
+.mask { margin-top: 400px;
+      background-color: rgba(0, 0, 0, 0.6);
+     //text-shadow: 1px 1px 5px black;
+      }
+
+.datos {
+    text-align: center;
+    margin: 10px;
+    width: 100px;
+    padding: 15px 0;
+    //background: rgba(255, 255, 255, 0.12);
+    background-color: #ff8906;
+    border-top: 5px solid #ffffff;
+  }
+
+  h1, h2, h3 {font-family: 'Comfortaa', cursive;}
+
+  h1 {font-size: 60px;}
+
+  p {font-size: 18px; color: #a7a9be;}
+
+  main {background-color: #0f0e17;}
+
+  nav {background-color: #a7a9be !important;}
