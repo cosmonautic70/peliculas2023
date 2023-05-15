@@ -34,6 +34,9 @@ fetch(consulta)
     const poster = document.getElementById('poster');
     poster.src = `${urlactorimagen}${data.poster_path}`; 
 
+    const tagline = document.getElementByClass('tagline');
+    tagline.src = textContent = data.tagline; 
+
 
 	// obtener el director de la película
 	const director = data.credits.crew.find(member => member.department === "Directing" && member.job === "Director");
@@ -41,7 +44,7 @@ fetch(consulta)
 	if (director) {
 	const directorElement = document.getElementById('directortxt');
 	directorElement.textContent = `${director.name}`;
-    const idDirector= `${director.id}`;
+        const idDirector= `${director.id}`;
 
 
 //datos del director
@@ -50,19 +53,18 @@ fetch(consulta)
     console.log(consultadirector);  
 
     fetch(consultadirector)
-						.then(response => response.json())
-						.then(personData => {
-                            console.log(personData);  
+		.then(response => response.json())
+		.then(personData => {
+	        console.log(personData);  
 
-                            const detalledirector = document.getElementById('director-biografia');
-                            detalledirector.textContent = personData.biography;
+                const detalledirector = document.getElementById('director-biografia');
+                detalledirector.textContent = personData.biography;
                             
-                            const fotodirector = document.getElementById('fotodirector');
-                            fotodirector.src = `${urlactorimagen}${personData.profile_path}`; 
+                const fotodirector = document.getElementById('fotodirector');
+                fotodirector.src = `${urlactorimagen}${personData.profile_path}`; 
 
-						})
-						.catch(error => console.error(error));
-
+		})
+		.catch(error => console.error(error));
 
     }
 
