@@ -107,5 +107,17 @@ fetch(consulta)
 })
 .catch(error => console.error(error));
 
+   const consultavideo ='https://api.themoviedb.org/3/movie/'+id+'/videos?api_key=45082c7b0f792bc71f372fbce1b42c61'
+
+       fetch(consultavideo)
+       .then(response => response.json())
+       .then(datavideo => {
+       console.log(datavideo);
+
+       const trailer = document.getElementById('trailer');
+       trailer.src = "https://www.youtube.com/embed/"+datavideo.results[0].key;
+       })
+	.catch(error => console.error(error));
+
 
 
