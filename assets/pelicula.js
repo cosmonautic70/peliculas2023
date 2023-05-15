@@ -5,7 +5,10 @@ const urlvalores = new URLSearchParams(window.location.search);
 const id = urlvalores.get("id");
 console.log("id pelicula: ", id);
 
+/// consulta para datos de película y actores
 const consulta = 'https://api.themoviedb.org/3/movie/'+id+'?api_key=45082c7b0f792bc71f372fbce1b42c61&language=es-es&append_to_response=credits'
+
+///  base url de las imagenes 
 const urlbaseimagen = 'https://image.tmdb.org/t/p/w1066_and_h600_bestv2/' 
 const urlactorimagen = 'https://image.tmdb.org/t/p/w300_and_h450_bestv2' 
 
@@ -15,19 +18,20 @@ fetch(consulta)
 
 .then(response => response.json())
 
-
 .then(data => {
     console.log(data);  
-        
-    
+
+    /// titulo de la película 	
     const titulopelicula = document.getElementById('titulo');
     titulopelicula.textContent = data.title;
     document.title = data.title+' - Popcorn';
 
+    /// imagen de la película
     const imagenpelicula = document.getElementById("imagen");
     const laurl =`url(${urlbaseimagen}${data.backdrop_path})`;
     imagenpelicula.style.backgroundImage = laurl;       
 
+    /// otros datos de la película
     const sinopsis = document.getElementById('sinopsistxt');
     sinopsis.textContent = data.overview;
 
@@ -38,7 +42,7 @@ fetch(consulta)
     tagline.src = textContent = data.tagline; 
 
 
-	// obtener el director de la película
+	// obtener el id del director de la película
 	const director = data.credits.crew.find(member => member.department === "Directing" && member.job === "Director");
 	// mostrar el nombre del director en la página
 	if (director) {
