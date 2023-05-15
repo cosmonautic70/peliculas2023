@@ -38,7 +38,7 @@ fetch(consulta)
     const poster = document.getElementById('poster');
     poster.src = `${urlactorimagen}${data.poster_path}`; 
 
-    const tagline = document.getElementByClassName('tagline');
+    const tagline = document.getElementById('tagline');
     tagline.src = textContent = data.tagline; 
 
 
