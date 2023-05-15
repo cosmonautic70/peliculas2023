@@ -6,7 +6,6 @@ const id = urlvalores.get("id");
 console.log("id pelicula: ", id);
 
 const consulta = 'https://api.themoviedb.org/3/movie/'+id+'?api_key=45082c7b0f792bc71f372fbce1b42c61&language=es-es&append_to_response=credits'
-const actores = 'https://api.themoviedb.org/3/movie/'+id+'/credits?api_key=45082c7b0f792bc71f372fbce1b42c61&language=es-es'
 const urlbaseimagen = 'https://image.tmdb.org/t/p/w1066_and_h600_bestv2/' 
 const urlactorimagen = 'https://image.tmdb.org/t/p/w300_and_h450_bestv2' 
 
